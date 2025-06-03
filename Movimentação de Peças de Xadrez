@@ -1,1 +1,40 @@
+#include <stdio.h>
 
+int main() {
+    // Constantes para o número de casas a serem movidas
+    const int CASAS_TORRE = 5;
+    const int CASAS_BISPO = 5;
+    const int CASAS_RAINHA = 8;
+
+    // --- Movimento da Torre (usando for) ---
+    printf("### Movimento da Torre ###\n");
+    // A Torre move-se 5 casas para a direita.
+    for (int i = 0; i < CASAS_TORRE; i++) {
+        printf("Direita\n");
+    }
+    printf("\n"); // Adiciona uma linha em branco para separar as seções
+
+    // --- Movimento do Bispo (usando while) ---
+    printf("### Movimento do Bispo ###\n");
+    // O Bispo move-se 5 casas na diagonal para cima e à direita.
+    int casas_movidas_bispo = 0;
+    while (casas_movidas_bispo < CASAS_BISPO) {
+        printf("Cima, Direita\n");
+        casas_movidas_bispo++;
+    }
+    printf("\n"); // Adiciona uma linha em branco para separar as seções
+
+    // --- Movimento da Rainha (usando do-while) ---
+    printf("### Movimento da Rainha ###\n");
+    // A Rainha move-se 8 casas para a esquerda.
+    int casas_movidas_rainha = 0;
+    if (CASAS_RAINHA > 0) { // Garante que o do-while execute corretamente se CASAS_RAINHA for 0
+        do {
+            printf("Esquerda\n");
+            casas_movidas_rainha++;
+        } while (casas_movidas_rainha < CASAS_RAINHA);
+    }
+    printf("\n"); // Adiciona uma linha em branco para separar as seções
+
+    return 0; // Indica que o programa terminou com sucesso
+}
