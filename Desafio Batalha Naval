@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+#define TAMANHO 10
+#define TAMANHO_NAVIO 3
+
+int main() {
+    int tabuleiro[TAMANHO][TAMANHO];
+
+    // Inicializa o tabuleiro com água (0)
+    for (int i = 0; i < TAMANHO; i++) {
+        for (int j = 0; j < TAMANHO; j++) {
+            tabuleiro[i][j] = 0;
+        }
+    }
+
+    // Define as coordenadas do navio horizontal
+    int navio1_linha = 1;
+    int navio1_coluna = 1;
+
+    // Posiciona o navio horizontal no tabuleiro
+    for (int i = 0; i < TAMANHO_NAVIO; i++) {
+        tabuleiro[navio1_linha][navio1_coluna + i] = 3;
+    }
+
+    // Define as coordenadas do navio vertical
+    int navio2_linha = 3;
+    int navio2_coluna = 4;
+
+    // Posiciona o navio vertical no tabuleiro
+    for (int i = 0; i < TAMANHO_NAVIO; i++) {
+        tabuleiro[navio2_linha + i][navio2_coluna] = 3;
+    }
+
+    // Exibe o tabuleiro final no console
+    printf("Tabuleiro do Batalha Naval:\n");
+    for (int i = 0; i < TAMANHO; i++) {
+        for (int j = 0; j < TAMANHO; j++) {
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
